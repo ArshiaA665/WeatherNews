@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import  Toggles  from './Toggles';
 
 const WeatherApp = () => {
-    let api_key = "f3537d04948c7b4f640e9e1cf6277978";
+    let api_key = "your api key";
 
     const [wicon,setWicon] = useState(cloud_icon);
 
