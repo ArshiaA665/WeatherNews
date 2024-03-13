@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --background-color: #1E90FF;
+    --toggle-bg: #f0eb9d;
+    --toggle-fg: #ffd000
+}
+
+
+.weather-container {
+    margine: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--background-color);
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.25s ease-in-out;
+}
+
+[data-theme="dark"] {
+    --background-color: #262626;
+    --toggle-bg: #283452;
+    --toggle-fg: #00a6ff;
+
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle + label::before {
+    content: "";
+    height: 1em;
+    width: 2em;
+    border-radius: 1em;
+    background-color: var(--toggle-bg);
+    margin-right: 0.5em;
+    transition: background-color 250ms ease-in-out
+}
+
+.toggle + label::after {
+    content:"";
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 1em;
+    background-color: var(--toggle-fg);
+    position: absolute;
+    left: 0.2em;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.toggle:checked + label::after {
+    transform: translateX(100%);
+
+}
